@@ -25,13 +25,12 @@
 
   
 
-<link rel="canonical" href="http://example.com/archives/2020/page/2/">
+<link rel="canonical" href="http://example.com/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
 
 
   <title>
-2020 Y -
-Archive |
+观察者模式 |
 迎接审判吧！ = (￢_￢)智商三岁</title>
 <meta name="generator" content="Hexo 5.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -59,9 +58,19 @@ Archive |
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
-      Posted on "2020Y"
+  <h1 itemprop="name headline">观察者模式
   </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-01-26 20:26:59">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-01-26T20:26:59+08:00">2021-01-26</time>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -91,12 +100,12 @@ Archive |
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
         </ul>
       </div>
     </header>
@@ -117,47 +126,148 @@ Archive |
       <div class="inner">
         <div id="main" class="pjax">
           
-  <div class="collapse wrap">
-    <h2 class="item header">
-          <a href="/archives">All</a> <small>/</small> 2020 Y <small>Archive</small>
-        
-    </h2>
-          <h3 class="item section"><a href="/archives/2020/07">07 M</a></h3>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
 
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2020-07-06T20:44:21+08:00"
-                  content="2020-07-06">
-              07-06
-            </time>
-          </div>
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
-          <div class="title">
-              <a href="/2020/07/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" itemprop="url">
-                <span itemprop="name">这些你都知道吗？</span>
-              </a>
-          </div>
-        </article>
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="观察者模式"><a class="markdownIt-Anchor" href="#观察者模式">#</a> 观察者模式</h4>
+<h5 id="背景"><a class="markdownIt-Anchor" href="#背景">#</a> 背景</h5>
+<pre><code>在软件系统中进场遇到这类需求：当一个对象的状态发生改变，某些与它相关的对象也要随之做出相应的变化。这是建立一种 对象域对象之前的依赖关系，一个对象发生变化时将自动通知其他对象，其他对象将做出反应。
+
+我们将发生改变的对象称为观察目标，将被通知的对象称为观察者，一个观察目标可以对应多个观察者，而且这些观察者之间没有相互关系，之后可以根据需要增加和删除，系统更易于扩展，这就是观察者模式的产生背景。
+</code></pre>
+<h5 id="是什么"><a class="markdownIt-Anchor" href="#是什么">#</a> 是什么？</h5>
+<pre><code>观察者模式（Observer Pattern）:定义对象之间的一种 一对多依赖关系，使得每当一个对象状态发生改变时，其他依赖对象皆得到通知并被自动更新。观察者模式是一种对象行为型模式。
+</code></pre>
+<h5 id="使用场景"><a class="markdownIt-Anchor" href="#使用场景">#</a> 使用场景</h5>
+<pre><code>在一个抽象模型中，一个对象的行为 依赖于另一个对象的状态。即当目标对象的状态发生改变是，会直接影响到观察者的行为；
+一个对象需要通知其他对象发生反应，但不知道对象是谁。
+需要在系统中创建一个触发链时，A对象的行为将影响B，B对象的行为将影响C对象......，可以使用观察者模式创建一种链式触发机制。
+</code></pre>
+<h5 id="模式组成"><a class="markdownIt-Anchor" href="#模式组成">#</a> 模式组成</h5>
+<pre><code>在观察着模式中，通常包含以下角色：
+
+目标（Subject）
+
+观察目标（ConcresteSubject）
+
+观察者（Observer）
+
+具体观察者（ConcreteObserver）
+</code></pre>
+<p>作者：山前未相见<br>
+链接：<span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODkwNzE2MDE2MDMzNjI4MTcz">https://juejin.cn/post/6890716016033628173</span><br>
+ 来源：掘金</p>
+
   </div>
 
-  
-  <nav class="pagination">
-    <div class="inner">
-    <a class="extend prev" rel="prev" href="/archives/2020/"><i class="ic i-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </div>
-  </nav>
+   <footer>
 
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-01-26 20:34:49" itemprop="dateModified" datetime="2021-01-26T20:34:49+08:00">2021-01-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="(￢_￢)智商三岁 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="(￢_￢)智商三岁 Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="(￢_￢)智商三岁 PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>(￢_￢)智商三岁 <i class="ic i-at"><em>@</em></i>(￢_￢)智商三岁
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="观察者模式">http://example.com/2021/01/26/观察者模式/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciub8ja1j20zk0m81ky.jpg" title="css常用选择器">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>css常用选择器</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
 
 
         </div>
         <div id="sidebar">
           
+
 <div class="inner">
 
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 观察者模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text"> 背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.</span> <span class="toc-text"> 是什么？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 使用场景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E7%BB%84%E6%88%90"><span class="toc-number">1.4.</span> <span class="toc-text"> 模式组成</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -229,7 +339,6 @@ Archive |
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/archives/2020/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -238,6 +347,7 @@ Archive |
     <li class="percent"></li>
   </ul>
 </div>
+
 
         </div>
         <div class="dimmer"></div>
@@ -256,7 +366,7 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/01/04/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a></span>
+    <span><a href="/2020/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7/" title="react生命周期旧">react生命周期旧</a></span>
   </li>
 
       
@@ -265,7 +375,7 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">函数的length属性</a></span>
+    <span><a href="/2021/01/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8Ehttp/" title="浏览器与http">浏览器与http</a></span>
   </li>
 
       
@@ -274,7 +384,7 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/12/28/class/" title="class">class</a></span>
+    <span><a href="/2020/09/24/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="深拷贝与浅拷贝">深拷贝与浅拷贝</a></span>
   </li>
 
       
@@ -292,7 +402,25 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="react生命周期">react生命周期</a></span>
+    <span><a href="/2020/12/26/react-hooks/" title="react-hooks">react-hooks</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" title="css常用选择器">css常用选择器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/03/object%E2%80%94%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/" title="object—属性描述符">object—属性描述符</a></span>
   </li>
 
       
@@ -310,7 +438,7 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/12/30/class%E7%BB%A7%E6%89%BF/" title="class继承">class继承</a></span>
+    <span><a href="/2021/01/04/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a></span>
   </li>
 
       
@@ -319,25 +447,7 @@ Archive |
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/09/01/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="vue生命周期">vue生命周期</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/12/26/react-hooks/" title="react-hooks">react-hooks</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/09/24/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="深拷贝与浅拷贝">深拷贝与浅拷贝</a></span>
+    <span><a href="/2021/01/24/vue3/" title="vue3">vue3</a></span>
   </li>
 
   </ul>
@@ -368,7 +478,7 @@ Archive |
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'archives/2020/page/2/',
+    path: '2021/01/26/观察者模式/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
