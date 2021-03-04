@@ -100,12 +100,12 @@ vue面试题 |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
         </ul>
       </div>
     </header>
@@ -308,11 +308,16 @@ Proxy 作为新标准将受到浏览器厂商重点持续的性能优化，也�
 <pre><code>它两的执行结果是一样的。计算属性 是只有它的依赖发生变化的时候它会自动的进行计算求值，如果依赖没有发生变化，那么每次访问的时候计算属性都会立刻返回之前的执行结果，而事件函数需要手动调用，并且调用一次触发一次比较粗暴一点，每当重新触发渲染时，调用方法总是再次执行函数。
 </code></pre>
 <h4 id="三十一vue-router-的原理是什么"><a class="markdownIt-Anchor" href="#三十一vue-router-的原理是什么">#</a> 三十一.vue-router 的原理是什么？</h4>
-<pre><code>vue-router是什么：他可以让单页面应用拥有了多页面应用的效果，一个url对应一个页面。
+<h5 id="vue-router是什么"><a class="markdownIt-Anchor" href="#vue-router是什么">#</a> vue-router 是什么：</h5>
+<pre><code>他可以让单页面应用拥有了多页面应用的效果，一个url对应一个页面。
 它主要是通过h5新增的history和hash两种模式来实现的
 hash —— 即地址栏 URL 中的 # 符号。它的特点在于：hash 虽然出现在 URL 中，但不会被包括在 HTTP 请求中，对后端完全没有影响，因此改变 hash 不会重新加载页面。每次hash值得变化，会触发hashchange这个时间，通过这个时间我就可以知道hash值发生了哪些变化。然后我们就可以监听hashchange来实现更新页面部分内容的操作。
 history —— 利用了 HTML5 History Interface 中新增的 pushState() 和 replaceState() 方法。（需要特定浏览器支持）这两个方法应用于浏览器的历史记录栈，在当前已有的 back、forward、go 的基础之上，它们提供了对历史记录进行修改的功能。只是当它们执行修改时，虽然改变了当前的 URL，但浏览器不会立即向后端发送请求。
 因此可以说，hash 模式和 history 模式都属于浏览器自身的特性，Vue-Router 只是利用了这两个特性（通过调用浏览器提供的接口）来实现前端路由.
+</code></pre>
+<h5 id="router-link和a标签的区别"><a class="markdownIt-Anchor" href="#router-link和a标签的区别">#</a> router-link 和 a 标签的区别？</h5>
+<pre><code>通过router-link进行跳转不会跳转到新的页面，也不会重新渲染，它会选择路由所指的组件进行渲染，避免了重复渲染。
+a标签它是从一个页面跳转到另一个页面等于从新打开一个页面，这就违背了多视图单页面开发的概念。
 </code></pre>
 <h4 id="三十二插槽的作用"><a class="markdownIt-Anchor" href="#三十二插槽的作用">#</a> 三十二。插槽的作用：</h4>
 <pre><code>为了让组件更加具有扩展性。抽取共性，保留不同为插槽，让其他组件可以传递自己想展示的标签到预留插槽。它包含具名插槽，匿名插槽、还有作用域插槽。
@@ -453,6 +458,19 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
 <h4 id="五十为什么在-vue30-采用了-proxy抛弃了-objectdefineproperty"><a class="markdownIt-Anchor" href="#五十为什么在-vue30-采用了-proxy抛弃了-objectdefineproperty">#</a> 五十。为什么在 Vue3.0 采用了 Proxy, 抛弃了 Object.defineProperty？</h4>
 <pre><code>Object.defineProperty 本身有一定的监控到数组下标变化的能力,但是在 Vue 中,从性能/体验的性价比考虑,尤大大就弃用了这个特性([Vue 为什么不能检测数组变动](https://link.zhihu.com/?target=https%3A//segmentfault.com/a/1190000015783546) )。为了解决这个问题,经过 vue 内部处理后可以使用以下几种方法来监听数组
 </code></pre>
+<h4 id="五十一route和router的区别"><a class="markdownIt-Anchor" href="#五十一route和router的区别">#</a> 五十一.<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mtext>和</mtext></mrow><annotation encoding="application/x-tex">route和</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord cjk_fallback">和</span></span></span></span> router 的区别？</h4>
+<pre><code>$route是路由信息对象，包含path、params、hash,query,fullPath,matched,name等路由信息参数。而$router是路由实例对象包括了路由的跳转方法，钩子函数。
+</code></pre>
+<h4 id="五十二vue实现数据双向绑定的原理"><a class="markdownIt-Anchor" href="#五十二vue实现数据双向绑定的原理">#</a> 五十二.vue 实现数据双向绑定的原理？</h4>
+<pre><code>它主要是采用数据劫持结合发布订阅的方式，通过Object.definedProperty()来劫持各个属性的get、set，在数据变动时发布消息给订阅者，触发相应监听回调。当把一个普通JS对象传给vue实例作为它的data选项时，vue将遍历它的属性，用Object.defineproperty()将他们转为getter和setter。用户看不见getter和setter，但是在内部他们让vue追踪依赖，在属性背访问和修改时通知变化。
+vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,compile和watcher三者，整合Observer来监听自己的model的数据变化，通过compile来解析编译模板指令，最终利用watcher搭起observer和compile之间的桥梁，达到数据变化
+</code></pre>
+<h4 id="五十三虚拟dom的优缺点"><a class="markdownIt-Anchor" href="#五十三虚拟dom的优缺点">#</a> 五十三。虚拟 dom 的优缺点？</h4>
+<pre><code>虚拟dom可以经过diff算法找出最小差异，然后批量进行patch.
+不需要手动操作dom
+它可以跨平台，能在服务器端渲染和移动端开发
+缺点：无法进行极致优化
+</code></pre>
 
   </div>
 
@@ -464,7 +482,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-02-23 11:05:44" itemprop="dateModified" datetime="2021-02-23T11:05:44+08:00">2021-02-23</time>
+    <time title="Modified: 2021-02-23 14:10:57" itemprop="dateModified" datetime="2021-02-23T14:10:57+08:00">2021-02-23</time>
   </span>
 </div>
 
@@ -519,7 +537,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
     <div class="item left">
       
 
-  <a href="/2021/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicliwyw55j20zk0m8hdt.jpg" title="JS面试题">
+  <a href="/2021/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewkhf1zj20zk0m81kx.jpg" title="JS面试题">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>JS面试题</h3>
@@ -529,7 +547,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
     <div class="item right">
       
 
-  <a href="/2021/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm07ih54j20zk0m84qp.jpg" title="手写笔试题">
+  <a href="/2021/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="手写笔试题">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>手写笔试题</h3>
@@ -551,7 +569,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue"><span class="toc-number">1.</span> <span class="toc-text"> vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80vue%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text"> 一.vue 的特点是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8Cvue%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.</span> <span class="toc-text"> 二.vue 的原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89computed-%E5%92%8C-watch-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E5%8F%8A%E8%BF%90%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 三.computed 和 watch 有什么区别及运用场景？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9Bvue-%E4%B8%AD%E7%9A%84-key-%E5%88%B0%E5%BA%95%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 四.Vue 中的 key 到底有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E4%BB%80%E4%B9%88%E6%98%AFmvvm"><span class="toc-number">1.5.</span> <span class="toc-text"> 五。什么是 MVVM？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%ADmvvm%E5%92%8Cmvc%E5%8C%BA%E5%88%AB%E5%AE%83%E5%92%8C%E5%85%B6%E5%AE%83%E6%A1%86%E6%9E%B6jquery%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF%E9%80%82%E5%90%88"><span class="toc-number">1.6.</span> <span class="toc-text"> 六.mvvm 和 mvc 区别？它和其它框架（jquery）的区别是什么？哪些场景适合？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83vuex%E6%98%AF%E4%BB%80%E4%B9%88%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%93%AA%E7%A7%8D%E5%8A%9F%E8%83%BD%E5%9C%BA%E6%99%AF%E4%BD%BF%E7%94%A8%E5%AE%83"><span class="toc-number">1.7.</span> <span class="toc-text"> 七.vuex 是什么？怎么使用？哪种功能场景使用它？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%ABvuex%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.</span> <span class="toc-text"> 八.vuex 有哪几种属性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%9D-v-show%E5%92%8Cv-if%E6%8C%87%E4%BB%A4%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9%E5%92%8C%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">1.9.</span> <span class="toc-text"> 九. v-show 和 v-if 指令的共同点和不同点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81vue-router%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E5%AF%BC%E8%88%AA%E9%92%A9%E5%AD%90"><span class="toc-number">1.10.</span> <span class="toc-text"> 十.vue-router 有哪几种导航钩子？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AFvue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.11.</span> <span class="toc-text"> 十一。什么是 vue 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%BA%8Cvue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.12.</span> <span class="toc-text"> 十二.vue 生命周期的作用是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%BC%9A%E8%A7%A6%E5%8F%91%E5%93%AA%E5%87%A0%E4%B8%AA%E9%92%A9%E5%AD%90"><span class="toc-number">1.13.</span> <span class="toc-text"> 十三。第一次页面加载会触发哪几个钩子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0%E6%AF%8F%E4%B8%AA%E5%91%A8%E6%9C%9F%E5%85%B7%E4%BD%93%E9%80%82%E5%90%88%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF"><span class="toc-number">1.14.</span> <span class="toc-text"> 十四。简单描述每个周期具体适合哪些场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8key"><span class="toc-number">1.15.</span> <span class="toc-text"> 十五。为什么使用 key？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E9%81%BF%E5%85%8D-v-if-%E5%92%8C-v-for-%E7%94%A8%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-number">1.16.</span> <span class="toc-text"> 十六。为什么避免 v-if 和 v-for 用在一起</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%83vnode%E6%98%AF%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F-dom%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.17.</span> <span class="toc-text"> 十七.VNode 是什么？虚拟 DOM 是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%85%ABactive-class%E6%98%AF%E5%93%AA%E4%B8%AA%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E5%AE%9A%E4%B9%89"><span class="toc-number">1.18.</span> <span class="toc-text"> 十八.active-class 是哪个组件的属性？嵌套路由怎么定义？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B9%9D%E6%80%8E%E4%B9%88%E5%AE%9A%E4%B9%89vue-router%E7%9A%84%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96%E4%BC%A0%E8%BF%87%E6%9D%A5%E7%9A%84%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">1.19.</span> <span class="toc-text"> 十九。怎么定义 vue-router 的动态路由？怎么获取传过来的动态参数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E8%AF%B7%E8%AF%B4%E5%87%BAvuecli%E9%A1%B9%E7%9B%AE%E4%B8%ADsrc%E7%9B%AE%E5%BD%95%E6%AF%8F%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">1.20.</span> <span class="toc-text"> 二十。请说出 vue.cli 项目中 src 目录每个文件夹和文件的用法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%80%E6%8C%87%E4%BB%A4v-el%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.21.</span> <span class="toc-text"> 二十一。指令 v-el 的作用是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%8C%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%BA3%E4%B8%AAvue%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-number">1.22.</span> <span class="toc-text"> 二十二。请列举出 3 个 Vue 中常用的生命周期钩子函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%89%E6%80%8E%E6%A0%B7%E7%90%86%E8%A7%A3%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">1.23.</span> <span class="toc-text"> 二十三。怎样理解单向数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%90%84%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.24.</span> <span class="toc-text"> 二十四。各个生命周期的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%94%E5%9C%A8%E5%93%AA%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%86%85%E8%B0%83%E7%94%A8%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82"><span class="toc-number">1.25.</span> <span class="toc-text"> 二十五。在哪个生命周期内调用异步请求？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%85%AD%E5%9C%A8%E4%BB%80%E4%B9%88%E9%98%B6%E6%AE%B5%E6%89%8D%E8%83%BD%E8%AE%BF%E9%97%AE%E6%93%8D%E4%BD%9C-dom"><span class="toc-number">1.26.</span> <span class="toc-text"> 二十六。在什么阶段才能访问操作 DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%83proxy-%E4%B8%8E-objectdefineproperty-%E4%BC%98%E5%8A%A3%E5%AF%B9%E6%AF%94"><span class="toc-number">1.27.</span> <span class="toc-text"> 二十七.Proxy 与 Object.defineProperty 优劣对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%85%AB%E4%BD%BF%E4%BD%A0%E7%94%A8%E8%BF%87-vuex-%E5%90%97"><span class="toc-number">1.28.</span> <span class="toc-text"> 二十八。使你用过 Vuex 吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B9%9D%E4%BD%BF%E7%94%A8%E8%BF%87-vue-ssr-%E5%90%97-%E8%AF%B4%E8%AF%B4-ssr"><span class="toc-number">1.29.</span> <span class="toc-text"> 二十九。使用过 Vue SSR 吗？ 说说 SSR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8Cmethods%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E8%80%8C%E4%B8%8D%E7%94%A8methods"><span class="toc-number">1.30.</span> <span class="toc-text"> 三十。计算属性和 methods 的区别？为什么要用计算属性而不用 methods？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%80vue-router-%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.31.</span> <span class="toc-text"> 三十一.vue-router 的原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%BA%8C%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.32.</span> <span class="toc-text"> 三十二。插槽的作用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%89keep-alive%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.33.</span> <span class="toc-text"> 三十三.keep-alive 的作用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%9B%9Bvuex%E4%B8%8E%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.34.</span> <span class="toc-text"> 三十四.vuex 与全局对象的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%BA%94%E4%B8%BA%E4%BB%80%E4%B9%88%E7%BB%84%E4%BB%B6%E9%87%8C%E7%9A%84data%E6%98%AF%E4%B8%AA%E5%87%BD%E6%95%B0"><span class="toc-number">1.35.</span> <span class="toc-text"> 三十五。为什么组件里的 data 是个函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%85%ADvue2x%E5%92%8Cvue3x%E6%B8%B2%E6%9F%93%E5%99%A8%E7%9A%84diff%E7%AE%97%E6%B3%95%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">1.36.</span> <span class="toc-text"> 三十六.vue2.x 和 vue3.x 渲染器的 diff 算法有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%83%E9%82%A3%E4%BD%A0%E7%9F%A5%E9%81%93vue3x%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86%E5%90%97"><span class="toc-number">1.37.</span> <span class="toc-text"> 三十七。那你知道 Vue3.x 响应式数据原理吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%85%ABnexttick%E7%9F%A5%E9%81%93%E5%90%97%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.38.</span> <span class="toc-text"> 三十八.nextTick 知道吗，实现原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B9%9D%E8%AF%B4%E4%B8%80%E4%B8%8Bvue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.39.</span> <span class="toc-text"> 三十九。说一下 Vue 的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E8%AF%B4%E4%B8%80%E4%B8%8Bv-model%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.40.</span> <span class="toc-text"> 四十。说一下 v-model 的原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%80vue%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-number">1.41.</span> <span class="toc-text"> 四十一.Vue 事件绑定原理说一下？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%80vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-number">1.42.</span> <span class="toc-text"> 四十一.Vue 中组件生命周期调用顺序说一下？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%BA%8Cvue2x%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F"><span class="toc-number">1.43.</span> <span class="toc-text"> 四十二.Vue2.x 组件通信有哪些方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%89%E4%BD%A0%E9%83%BD%E5%81%9A%E8%BF%87%E5%93%AA%E4%BA%9Bvue%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.44.</span> <span class="toc-text"> 四十三。你都做过哪些 Vue 的性能优化？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%9B%9Bvue%E4%B8%AD%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">1.45.</span> <span class="toc-text"> 四十四.vue 中的修饰符？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%BA%94vue%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.46.</span> <span class="toc-text"> 四十五.vue 中的指令有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%85%AD%E6%8F%92%E6%A7%BD%E4%B9%8B%E9%97%B4%E6%98%AF%E6%80%8E%E4%B9%88%E4%BC%A0%E5%80%BC%E7%9A%84"><span class="toc-number">1.47.</span> <span class="toc-text"> 四十六。插槽之间是怎么传值的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%83vue%E4%B8%AD%E7%9A%84%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.48.</span> <span class="toc-text"> 四十七.vue 中的内置组件有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%85%ABvue%E4%B8%AD%E7%9A%84transfrom%E7%BB%84%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.49.</span> <span class="toc-text"> 四十八.vue 中的 transfrom 组件是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B9%9Dcomputed-%E6%98%AF%E4%BB%80%E4%B9%88%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.50.</span> <span class="toc-text"> 四十九.computed 是什么？实现原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%8D%81%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8-vue30-%E9%87%87%E7%94%A8%E4%BA%86-proxy%E6%8A%9B%E5%BC%83%E4%BA%86-objectdefineproperty"><span class="toc-number">1.51.</span> <span class="toc-text"> 五十。为什么在 Vue3.0 采用了 Proxy, 抛弃了 Object.defineProperty？</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue"><span class="toc-number">1.</span> <span class="toc-text"> vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80vue%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text"> 一.vue 的特点是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8Cvue%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.</span> <span class="toc-text"> 二.vue 的原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89computed-%E5%92%8C-watch-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E5%8F%8A%E8%BF%90%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 三.computed 和 watch 有什么区别及运用场景？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9Bvue-%E4%B8%AD%E7%9A%84-key-%E5%88%B0%E5%BA%95%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 四.Vue 中的 key 到底有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E4%BB%80%E4%B9%88%E6%98%AFmvvm"><span class="toc-number">1.5.</span> <span class="toc-text"> 五。什么是 MVVM？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%ADmvvm%E5%92%8Cmvc%E5%8C%BA%E5%88%AB%E5%AE%83%E5%92%8C%E5%85%B6%E5%AE%83%E6%A1%86%E6%9E%B6jquery%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF%E9%80%82%E5%90%88"><span class="toc-number">1.6.</span> <span class="toc-text"> 六.mvvm 和 mvc 区别？它和其它框架（jquery）的区别是什么？哪些场景适合？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83vuex%E6%98%AF%E4%BB%80%E4%B9%88%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%93%AA%E7%A7%8D%E5%8A%9F%E8%83%BD%E5%9C%BA%E6%99%AF%E4%BD%BF%E7%94%A8%E5%AE%83"><span class="toc-number">1.7.</span> <span class="toc-text"> 七.vuex 是什么？怎么使用？哪种功能场景使用它？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%ABvuex%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.</span> <span class="toc-text"> 八.vuex 有哪几种属性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%9D-v-show%E5%92%8Cv-if%E6%8C%87%E4%BB%A4%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9%E5%92%8C%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">1.9.</span> <span class="toc-text"> 九. v-show 和 v-if 指令的共同点和不同点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81vue-router%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E5%AF%BC%E8%88%AA%E9%92%A9%E5%AD%90"><span class="toc-number">1.10.</span> <span class="toc-text"> 十.vue-router 有哪几种导航钩子？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AFvue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.11.</span> <span class="toc-text"> 十一。什么是 vue 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%BA%8Cvue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.12.</span> <span class="toc-text"> 十二.vue 生命周期的作用是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%BC%9A%E8%A7%A6%E5%8F%91%E5%93%AA%E5%87%A0%E4%B8%AA%E9%92%A9%E5%AD%90"><span class="toc-number">1.13.</span> <span class="toc-text"> 十三。第一次页面加载会触发哪几个钩子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0%E6%AF%8F%E4%B8%AA%E5%91%A8%E6%9C%9F%E5%85%B7%E4%BD%93%E9%80%82%E5%90%88%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF"><span class="toc-number">1.14.</span> <span class="toc-text"> 十四。简单描述每个周期具体适合哪些场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8key"><span class="toc-number">1.15.</span> <span class="toc-text"> 十五。为什么使用 key？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E9%81%BF%E5%85%8D-v-if-%E5%92%8C-v-for-%E7%94%A8%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-number">1.16.</span> <span class="toc-text"> 十六。为什么避免 v-if 和 v-for 用在一起</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B8%83vnode%E6%98%AF%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F-dom%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.17.</span> <span class="toc-text"> 十七.VNode 是什么？虚拟 DOM 是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E5%85%ABactive-class%E6%98%AF%E5%93%AA%E4%B8%AA%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E5%AE%9A%E4%B9%89"><span class="toc-number">1.18.</span> <span class="toc-text"> 十八.active-class 是哪个组件的属性？嵌套路由怎么定义？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E4%B9%9D%E6%80%8E%E4%B9%88%E5%AE%9A%E4%B9%89vue-router%E7%9A%84%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96%E4%BC%A0%E8%BF%87%E6%9D%A5%E7%9A%84%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">1.19.</span> <span class="toc-text"> 十九。怎么定义 vue-router 的动态路由？怎么获取传过来的动态参数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E8%AF%B7%E8%AF%B4%E5%87%BAvuecli%E9%A1%B9%E7%9B%AE%E4%B8%ADsrc%E7%9B%AE%E5%BD%95%E6%AF%8F%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">1.20.</span> <span class="toc-text"> 二十。请说出 vue.cli 项目中 src 目录每个文件夹和文件的用法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%80%E6%8C%87%E4%BB%A4v-el%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.21.</span> <span class="toc-text"> 二十一。指令 v-el 的作用是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%8C%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%BA3%E4%B8%AAvue%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-number">1.22.</span> <span class="toc-text"> 二十二。请列举出 3 个 Vue 中常用的生命周期钩子函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%89%E6%80%8E%E6%A0%B7%E7%90%86%E8%A7%A3%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">1.23.</span> <span class="toc-text"> 二十三。怎样理解单向数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%90%84%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.24.</span> <span class="toc-text"> 二十四。各个生命周期的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%94%E5%9C%A8%E5%93%AA%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%86%85%E8%B0%83%E7%94%A8%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82"><span class="toc-number">1.25.</span> <span class="toc-text"> 二十五。在哪个生命周期内调用异步请求？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%85%AD%E5%9C%A8%E4%BB%80%E4%B9%88%E9%98%B6%E6%AE%B5%E6%89%8D%E8%83%BD%E8%AE%BF%E9%97%AE%E6%93%8D%E4%BD%9C-dom"><span class="toc-number">1.26.</span> <span class="toc-text"> 二十六。在什么阶段才能访问操作 DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%83proxy-%E4%B8%8E-objectdefineproperty-%E4%BC%98%E5%8A%A3%E5%AF%B9%E6%AF%94"><span class="toc-number">1.27.</span> <span class="toc-text"> 二十七.Proxy 与 Object.defineProperty 优劣对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E5%85%AB%E4%BD%BF%E4%BD%A0%E7%94%A8%E8%BF%87-vuex-%E5%90%97"><span class="toc-number">1.28.</span> <span class="toc-text"> 二十八。使你用过 Vuex 吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B9%9D%E4%BD%BF%E7%94%A8%E8%BF%87-vue-ssr-%E5%90%97-%E8%AF%B4%E8%AF%B4-ssr"><span class="toc-number">1.29.</span> <span class="toc-text"> 二十九。使用过 Vue SSR 吗？ 说说 SSR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8Cmethods%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E8%80%8C%E4%B8%8D%E7%94%A8methods"><span class="toc-number">1.30.</span> <span class="toc-text"> 三十。计算属性和 methods 的区别？为什么要用计算属性而不用 methods？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%80vue-router-%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.31.</span> <span class="toc-text"> 三十一.vue-router 的原理是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vue-router%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.31.1.</span> <span class="toc-text"> vue-router 是什么：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router-link%E5%92%8Ca%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.31.2.</span> <span class="toc-text"> router-link 和 a 标签的区别？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%BA%8C%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.32.</span> <span class="toc-text"> 三十二。插槽的作用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%89keep-alive%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.33.</span> <span class="toc-text"> 三十三.keep-alive 的作用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%9B%9Bvuex%E4%B8%8E%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.34.</span> <span class="toc-text"> 三十四.vuex 与全局对象的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%BA%94%E4%B8%BA%E4%BB%80%E4%B9%88%E7%BB%84%E4%BB%B6%E9%87%8C%E7%9A%84data%E6%98%AF%E4%B8%AA%E5%87%BD%E6%95%B0"><span class="toc-number">1.35.</span> <span class="toc-text"> 三十五。为什么组件里的 data 是个函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%85%ADvue2x%E5%92%8Cvue3x%E6%B8%B2%E6%9F%93%E5%99%A8%E7%9A%84diff%E7%AE%97%E6%B3%95%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">1.36.</span> <span class="toc-text"> 三十六.vue2.x 和 vue3.x 渲染器的 diff 算法有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B8%83%E9%82%A3%E4%BD%A0%E7%9F%A5%E9%81%93vue3x%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86%E5%90%97"><span class="toc-number">1.37.</span> <span class="toc-text"> 三十七。那你知道 Vue3.x 响应式数据原理吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E5%85%ABnexttick%E7%9F%A5%E9%81%93%E5%90%97%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.38.</span> <span class="toc-text"> 三十八.nextTick 知道吗，实现原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%8D%81%E4%B9%9D%E8%AF%B4%E4%B8%80%E4%B8%8Bvue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.39.</span> <span class="toc-text"> 三十九。说一下 Vue 的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E8%AF%B4%E4%B8%80%E4%B8%8Bv-model%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.40.</span> <span class="toc-text"> 四十。说一下 v-model 的原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%80vue%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-number">1.41.</span> <span class="toc-text"> 四十一.Vue 事件绑定原理说一下？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%80vue%E4%B8%AD%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-number">1.42.</span> <span class="toc-text"> 四十一.Vue 中组件生命周期调用顺序说一下？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%BA%8Cvue2x%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F"><span class="toc-number">1.43.</span> <span class="toc-text"> 四十二.Vue2.x 组件通信有哪些方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%89%E4%BD%A0%E9%83%BD%E5%81%9A%E8%BF%87%E5%93%AA%E4%BA%9Bvue%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.44.</span> <span class="toc-text"> 四十三。你都做过哪些 Vue 的性能优化？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%9B%9Bvue%E4%B8%AD%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">1.45.</span> <span class="toc-text"> 四十四.vue 中的修饰符？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%BA%94vue%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.46.</span> <span class="toc-text"> 四十五.vue 中的指令有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%85%AD%E6%8F%92%E6%A7%BD%E4%B9%8B%E9%97%B4%E6%98%AF%E6%80%8E%E4%B9%88%E4%BC%A0%E5%80%BC%E7%9A%84"><span class="toc-number">1.47.</span> <span class="toc-text"> 四十六。插槽之间是怎么传值的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B8%83vue%E4%B8%AD%E7%9A%84%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.48.</span> <span class="toc-text"> 四十七.vue 中的内置组件有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E5%85%ABvue%E4%B8%AD%E7%9A%84transfrom%E7%BB%84%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.49.</span> <span class="toc-text"> 四十八.vue 中的 transfrom 组件是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%8D%81%E4%B9%9Dcomputed-%E6%98%AF%E4%BB%80%E4%B9%88%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.50.</span> <span class="toc-text"> 四十九.computed 是什么？实现原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%8D%81%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8-vue30-%E9%87%87%E7%94%A8%E4%BA%86-proxy%E6%8A%9B%E5%BC%83%E4%BA%86-objectdefineproperty"><span class="toc-number">1.51.</span> <span class="toc-text"> 五十。为什么在 Vue3.0 采用了 Proxy, 抛弃了 Object.defineProperty？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%8D%81%E4%B8%80route%E5%92%8Crouter%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.52.</span> <span class="toc-text"> 五十一.route和route和route和 router 的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%8D%81%E4%BA%8Cvue%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.53.</span> <span class="toc-text"> 五十二.vue 实现数据双向绑定的原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%8D%81%E4%B8%89%E8%99%9A%E6%8B%9Fdom%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.54.</span> <span class="toc-text"> 五十三。虚拟 dom 的优缺点？</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -566,7 +584,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">30</span>
+        <span class="count">31</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -652,43 +670,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" title="css常用选择器">css常用选择器</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/12/28/class/" title="class">class</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">函数的length属性</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7/" title="react生命周期旧">react生命周期旧</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/01/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8Ehttp/" title="浏览器与http">浏览器与http</a></span>
+    <span><a href="/2020/09/01/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="vue生命周期">vue生命周期</a></span>
   </li>
 
       
@@ -706,7 +688,52 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" title="JS面试题">JS面试题</a></span>
+    <span><a href="/2021/02/23/react%E9%9D%A2%E8%AF%95%E9%A2%98/" title="react面试题">react面试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/24/vue3/" title="vue3">vue3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/29/vue-%E6%8F%92%E6%A7%BD/" title="vue-插槽">vue-插槽</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">函数的length属性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" title="手写笔试题">手写笔试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/02/22/vue%E9%9D%A2%E8%AF%95%E9%A2%98/" title="vue面试题">vue面试题</a></span>
   </li>
 
       
@@ -724,16 +751,7 @@ computed watcher 通过 this.dep.subs.length 判断有没有订阅者,
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/09/01/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="vue生命周期">vue生命周期</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/01/04/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a></span>
+    <span><a href="/2020/12/30/class%E7%BB%A7%E6%89%BF/" title="class继承">class继承</a></span>
   </li>
 
   </ul>
