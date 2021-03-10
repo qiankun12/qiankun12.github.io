@@ -25,12 +25,12 @@
 
   
 
-<link rel="canonical" href="http://example.com/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/">
+<link rel="canonical" href="http://example.com/2020/07/08/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
 
 
   <title>
-函数的length属性 |
+性能优化面试题 |
 迎接审判吧！ = (￢_￢)智商三岁</title>
 <meta name="generator" content="Hexo 5.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -58,16 +58,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">函数的length属性
+  <h1 itemprop="name headline">性能优化面试题
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2021-01-05 19:20:18">
+  <span class="item" title="Created: 2020-07-08 14:39:17">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2021-01-05T19:20:18+08:00">2021-01-05</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-08T14:39:17+08:00">2020-07-08</time>
   </span>
 </div>
 
@@ -100,12 +100,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
           <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
         </ul>
       </div>
     </header>
@@ -134,7 +134,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2020/07/08/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -149,24 +149,70 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h5 id="函数的length属性的功能"><a class="markdownIt-Anchor" href="#函数的length属性的功能">#</a> 函数的 length 属性的功能</h5>
-<pre><code>函数中length属性是一个只读属性，用于返回函数中的形参数量。
+    <h4 id="vue首页白屏的原因及如何优化"><a class="markdownIt-Anchor" href="#vue首页白屏的原因及如何优化">#</a> vue 首页白屏的原因及如何优化</h4>
+<h5 id="一-原因"><a class="markdownIt-Anchor" href="#一-原因">#</a> 一、原因：</h5>
+<pre><code>单页面应用的 html 是靠 js 生成，因为首屏需要加载很大的js文件(app.js vendor.js)，所以当网速差的时候会产生一定程度的白屏
+</code></pre>
+<h5 id="二-解决办法"><a class="markdownIt-Anchor" href="#二-解决办法">#</a> 二、解决办法：</h5>
+<p>（1）优化 webpack 减少模块打包体积，code-split 按需加载</p>
+<p>（2）服务端渲染，在服务端事先拼装好首页所需的 html</p>
+<p>（3）首页加 loading 或 骨架屏 （仅仅是优化体验）</p>
+<p>（4）缓存一定要使用，但是请注意合理使用</p>
+<p>（5）代码压缩，服务端压缩，浏览器端解压缩</p>
+<h5 id="三-http压缩的过程"><a class="markdownIt-Anchor" href="#三-http压缩的过程">#</a> 三、HTTP 压缩的过程</h5>
+<pre><code>1. 浏览器发送Http request 给Web服务器,  request 中有Accept-Encoding: gzip, deflate。 (告诉服务器， 浏览器支持gzip压缩)·
 
-例:
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(function fn(a,s,d)&#123;&#125;.length)    &#x2F;&#x2F;3</span><br></pre></td></tr></table></figure>
-<pre><code>length 是函数对象的一个属性值，指该函数有多少个必须要传入的参数，即形参的个数。形参的数量不包括剩余参数个数，仅包括第一个具有默认值之前的参数个数。与之对比的是，  arguments.length 是函数被调用时实际传参的个数。  
-</code></pre>
-<h6 id="function-构造器的属性"><a class="markdownIt-Anchor" href="#function-构造器的属性">#</a> Function 构造器的属性</h6>
-<pre><code>Function 构造器本身也是个Function。它的 length 属性值为 1 。该属性 Writable: false, Enumerable: false, Configurable: true。
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1. Function构造器的属性的length为1</span><br><span class="line">console.log(Function.length); &#x2F;&#x2F; 1</span><br><span class="line"></span><br><span class="line">console.log(function(a)&#123;&#125;.length); &#x2F;&#x2F; 1</span><br><span class="line">console.log(function(a,b,c)&#123;&#125;.length); &#x2F;&#x2F; 3</span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line">2.如果函数内部是通过arguments调用参数，而没有实际定义参数的话，length 只会的得到 0。</span><br><span class="line">*&#x2F;</span><br><span class="line">function test1()&#123;</span><br><span class="line">    console.log(arguments.length);</span><br><span class="line">&#125;</span><br><span class="line">console.log(test1.length); &#x2F;&#x2F;0</span><br><span class="line">test1(1,2);&#x2F;&#x2F; 2</span><br></pre></td></tr></table></figure>
-<h5 id="es6的函数length属性"><a class="markdownIt-Anchor" href="#es6的函数length属性">#</a> ES6 的函数 length 属性</h5>
-<pre><code>ES6指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length属性将失真。下面代码中，length属性的返回值，等于函数的参数个数减去指定了默认值的参数个数。
+2. Web服务器接到request后， 生成原始的Response, 其中有原始的Content-Type和Content-Length。
 
-这时因为length属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。
+3. Web服务器通过Gzip，来对Response进行编码， 编码后header中有Content-Type和Content-Length(压缩后的大小)， 并且增加了Content-Encoding:gzip.  然后把Response发送给浏览器。
+
+4. 浏览器接到Response后，根据Content-Encoding:gzip来对Response 进行解码。 获取到原始response后， 然后显示出网页。
 </code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log((function (a)&#123;&#125;).length); &#x2F;&#x2F; 1</span><br><span class="line">console.log((function (a &#x3D; 5)&#123;&#125;).length); &#x2F;&#x2F; 0</span><br><span class="line">console.log((function(a, b, c &#x3D; 5)&#123;&#125;).length); &#x2F;&#x2F; 2;</span><br><span class="line">&#x2F;* 同时，这里的rest参数也不会计入length属性。*&#x2F; </span><br><span class="line">console.log((function(...args)&#123;&#125;).length); &#x2F;&#x2F; 0;</span><br><span class="line"></span><br><span class="line">&#x2F;*如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了*&#x2F; </span><br><span class="line">(function(a &#x3D; 0, b, c)&#123;&#125;).length; &#x2F;&#x2F; 0</span><br><span class="line">(function(a, b &#x3D; 1, c)&#123;&#125;).length; &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
+<h5 id="四-什么是骨架屏"><a class="markdownIt-Anchor" href="#四-什么是骨架屏">#</a> 四、什么是骨架屏</h5>
+<pre><code>骨架屏可以理解为是当数据还未加载进来前，页面的一个空白版本，在页面完全渲染完成之前，用户会看到一个样式简单，描绘了当前页面的大致框架的骨架屏页面，然后骨架屏中各个占位部分被实际资源完全替换，这个过程中用户会觉得内容正在逐渐加载即将呈现，降低了用户的焦躁情绪，使得加载过程主观上变得流畅。
+</code></pre>
+<h5 id="项目常见优化方法"><a class="markdownIt-Anchor" href="#项目常见优化方法">#</a> 项目常见优化方法</h5>
+<pre><code>从资源请求数量+代码执行效率两个角度来考虑
+</code></pre>
+<h5 id="dom结构"><a class="markdownIt-Anchor" href="#dom结构">#</a> DOM 结构</h5>
+<p>1. 样式表放在头部，防止白屏和闪屏</p>
+<p>2.JS 脚本放在底部或异步获取，防止阻塞资源加载</p>
+<p>3. 使用语义化标签，优化精简 DOM 结构</p>
+<p>4. 减少 DOM 操作频率</p>
+<p>5. 减少重绘与回流</p>
+<h5 id="js脚本"><a class="markdownIt-Anchor" href="#js脚本">#</a> JS 脚本</h5>
+<p>1. 优化脚本结构，移除重复的脚本</p>
+<p>2. 模块就近加载（CMD）</p>
+<p>3. 按需加载加载组件和路由</p>
+<p>4. 图片懒加载，列表分页</p>
+<p>5. 使用节流与防抖减少事件触发频率</p>
+<p>6. 尽量使用 CSS 动画代替 js 动画，开启硬件加速</p>
+<h5 id="资源打包上线"><a class="markdownIt-Anchor" href="#资源打包上线">#</a> 资源打包上线</h5>
+<p>1. 使用打包构建工具（webpack）清除注释，压缩页面资源，js、css、html、图片、字体等等</p>
+<p>2. 混淆 js 代码</p>
+<p>3. 分离非业务逻辑相关 vendor 依赖，使用长缓存缓存和 CDN 分发网络</p>
+<h5 id="服务器优化"><a class="markdownIt-Anchor" href="#服务器优化">#</a> 服务器优化</h5>
+<p>1. 减少 Http 请求，合并页面资源，js，css 单一入口。js 特殊可以分为两个文件，一个业务逻辑，一个非业务逻辑</p>
+<p>2. 把小图标合成雪碧图，不太适用经常更新的移动端开发</p>
+<p>3. 把小的图片，字体等资源 base64 化</p>
+<p>4. 开启 GZip 压缩，减少资源传输大小</p>
+<p>5. 使用强缓存和协商缓存，减少资源重复请求</p>
+<h5 id="vue中可以优化的点"><a class="markdownIt-Anchor" href="#vue中可以优化的点">#</a> Vue 中可以优化的点</h5>
+<p>1.Vue 库 dist 里面的 Runtime-only 比 Runtime+Compiler 小 30%</p>
+<p>2.Vue 的计算属性会根据依赖的 data 进行缓存</p>
+<p>3.keep-alive 可以缓存常用组件</p>
+<p>4.Vuex 中的 getter 也会根据依赖的 state 进行缓存</p>
+<p>5.v-for 中唯一 key 的使用</p>
+<p>6.Vue 全局错误处理 errorHandle</p>
+<p>7.Vue 路由懒加载</p>
+<p>8.Vue 组件动态加载</p>
+<h5 id="react中可以优化的点"><a class="markdownIt-Anchor" href="#react中可以优化的点">#</a> React 中可以优化的点</h5>
+<p>1. 在 constructor 改变 this 指向代替箭头函数和 render 内绑定 this，避免函数作为 props 带来不必要的 rerender</p>
+<p>2.shouldComponentUpdate，减少不不必要的 rerender</p>
+<p>3.PureComponent 高性能组件只响应引用数据的深拷贝</p>
+<p>4. 使用唯一 key 优化 list diff</p>
+<p>5. 合并 setState 操作，减少虚拟 dom 对比频率</p>
+<p>6.React 路由动态加载 react-loadable</p>
 
   </div>
 
@@ -178,7 +224,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-01-05 20:10:07" itemprop="dateModified" datetime="2021-01-05T20:10:07+08:00">2021-01-05</time>
+    <time title="Modified: 2021-03-09 09:17:52" itemprop="dateModified" datetime="2021-03-09T09:17:52+08:00">2021-03-09</time>
   </span>
 </div>
 
@@ -214,7 +260,7 @@
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://example.com/2021/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">http://example.com/2021/01/05/函数的length属性/</a>
+    <a href="http://example.com/2020/07/08/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%9D%A2%E8%AF%95%E9%A2%98/" title="性能优化面试题">http://example.com/2020/07/08/性能优化面试题/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -233,20 +279,20 @@
     <div class="item left">
       
 
-  <a href="/2021/01/04/ts-%E6%8E%A5%E5%8F%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesrnqv3j20zk0m8ava.jpg" title="ts_接口">
+  <a href="/2020/07/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclflwv2aj20zk0m84qp.jpg" title="这些你都知道吗？">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>ts_接口</h3>
+  <h3>这些你都知道吗？</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2021/01/11/TypeScript-%E7%BB%A7%E6%89%BF/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicmnywqgpj20zk0m8dwx.jpg" title="TypeScript_继承">
+  <a href="/2020/08/25/%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E5%8E%BB%E9%87%8D%E3%80%81%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84%C2%B7%C2%B7%C2%B7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicmnywqgpj20zk0m8dwx.jpg" title="数组的冒泡排序、去重、随机生成不重复数组···">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>TypeScript_继承</h3>
+  <h3>数组的冒泡排序、去重、随机生成不重复数组···</h3>
   </a>
 
     </div>
@@ -265,7 +311,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text"> 函数的 length 属性的功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#function-%E6%9E%84%E9%80%A0%E5%99%A8%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> Function 构造器的属性</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#es6%E7%9A%84%E5%87%BD%E6%95%B0length%E5%B1%9E%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text"> ES6 的函数 length 属性</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E9%A6%96%E9%A1%B5%E7%99%BD%E5%B1%8F%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text"> vue 首页白屏的原因及如何优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80-%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、原因：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、解决办法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89-http%E5%8E%8B%E7%BC%A9%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、HTTP 压缩的过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B-%E4%BB%80%E4%B9%88%E6%98%AF%E9%AA%A8%E6%9E%B6%E5%B1%8F"><span class="toc-number">1.4.</span> <span class="toc-text"> 四、什么是骨架屏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text"> 项目常见优化方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#dom%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.</span> <span class="toc-text"> DOM 结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#js%E8%84%9A%E6%9C%AC"><span class="toc-number">1.7.</span> <span class="toc-text"> JS 脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85%E4%B8%8A%E7%BA%BF"><span class="toc-number">1.8.</span> <span class="toc-text"> 资源打包上线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.9.</span> <span class="toc-text"> 服务器优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vue%E4%B8%AD%E5%8F%AF%E4%BB%A5%E4%BC%98%E5%8C%96%E7%9A%84%E7%82%B9"><span class="toc-number">1.10.</span> <span class="toc-text"> Vue 中可以优化的点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#react%E4%B8%AD%E5%8F%AF%E4%BB%A5%E4%BC%98%E5%8C%96%E7%9A%84%E7%82%B9"><span class="toc-number">1.11.</span> <span class="toc-text"> React 中可以优化的点</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -337,12 +383,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2021/01/04/ts-%E6%8E%A5%E5%8F%A3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2020/07/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2021/01/11/TypeScript-%E7%BB%A7%E6%89%BF/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2020/08/25/%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E5%8E%BB%E9%87%8D%E3%80%81%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84%C2%B7%C2%B7%C2%B7/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -366,7 +412,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" title="css常用选择器">css常用选择器</a></span>
+    <span><a href="/2021/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" title="JS面试题">JS面试题</a></span>
   </li>
 
       
@@ -375,7 +421,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7/" title="react生命周期旧">react生命周期旧</a></span>
+    <span><a href="/2020/12/29/TypeScript-%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript-基础总结">TypeScript-基础总结</a></span>
   </li>
 
       
@@ -384,7 +430,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/03/04/webpack%E9%9D%A2%E8%AF%95%E9%A2%98/" title="webpack面试题">webpack面试题</a></span>
+    <span><a href="/2021/01/24/vue3/" title="vue3">vue3</a></span>
   </li>
 
       
@@ -393,25 +439,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/02/23/react%E9%9D%A2%E8%AF%95%E9%A2%98/" title="react面试题">react面试题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/12/28/class/" title="class">class</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2020/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="react生命周期">react生命周期</a></span>
+    <span><a href="/2021/01/13/TCP%E5%92%8CUDP%E4%BB%A5%E5%8F%8A%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" title="TCP和UDP以及三次握手">TCP和UDP以及三次握手</a></span>
   </li>
 
       
@@ -429,7 +457,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/02/18/ES5%E4%B8%8EES6/" title="ES5与ES6">ES5与ES6</a></span>
+    <span><a href="/2020/07/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" title="这些你都知道吗？">这些你都知道吗？</a></span>
   </li>
 
       
@@ -438,7 +466,25 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2020/09/01/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="vue生命周期">vue生命周期</a></span>
+    <span><a href="/2020/12/30/JS%E7%9A%84%E4%B8%A5%E6%A0%BC%E4%B8%8E%E9%9D%9E%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94/" title="JS的严格与非严格模式的对比">JS的严格与非严格模式的对比</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/03/object%E2%80%94%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/" title="object—属性描述符">object—属性描述符</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/02/18/ES5%E4%B8%8EES6/" title="ES5与ES6">ES5与ES6</a></span>
   </li>
 
       
@@ -478,7 +524,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2021/01/05/函数的length属性/',
+    path: '2020/07/08/性能优化面试题/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
