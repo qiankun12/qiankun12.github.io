@@ -1,0 +1,546 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="(￢_￢)智商三岁" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="(￢_￢)智商三岁" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="(￢_￢)智商三岁" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2019/12/29/TypeScript-%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">
+
+
+
+  <title>
+TypeScript-基础总结 |
+迎接审判吧！ = (￢_￢)智商三岁</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">TypeScript-基础总结
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2019-12-29 14:40:40">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2019-12-29T14:40:40+08:00">2019-12-29</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">迎接审判吧！</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/29/TypeScript-%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="ts的优势"><a class="markdownIt-Anchor" href="#ts的优势">#</a> TS 的优势？</h4>
+<pre><code>它可以做类型检查，在ts中允许你为变量指定类型。
+语法提升
+重构
+</code></pre>
+<h4 id="ts的缺点"><a class="markdownIt-Anchor" href="#ts的缺点">#</a> TS 的缺点？</h4>
+<pre><code>有一定学习成本，需要理解接口、泛型、类、枚举等前端开发可能不是很熟悉的知识点
+</code></pre>
+<h4 id="ts中的接口"><a class="markdownIt-Anchor" href="#ts中的接口">#</a> TS 中的接口？</h4>
+<pre><code>接口就是一个规范或者约束，让我们的对象都去遵循它
+</code></pre>
+<h4 id="什么是ts"><a class="markdownIt-Anchor" href="#什么是ts">#</a> 什么是 TS？</h4>
+<pre><code>TS就像是法律它是针对任何人的，我们在做某一件事时就要遵循相关的约束
+</code></pre>
+<h4 id="泛型"><a class="markdownIt-Anchor" href="#泛型">#</a> 泛型？</h4>
+<pre><code>泛型就是在定义函数或者接口的时候，不预先指定具体类型，而在使用的时候再指定类型的一种特性。
+</code></pre>
+<h4 id="基础类型的运用"><a class="markdownIt-Anchor" href="#基础类型的运用">#</a> 基础类型的运用</h4>
+<pre><code>相信大家都知道数据类型有很多种，为了让程序有价值，TypeScript支持与JavaScript几乎相同的数据类型，此外还提供了实用的枚举类型方便我们使用。接下来就演示下TypeScript简单数据类型的使用。
+</code></pre>
+<h5 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型">#</a> 布尔类型</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let isDone: boolean &#x3D; false;</span><br></pre></td></tr></table></figure>
+<h5 id="数字类型"><a class="markdownIt-Anchor" href="#数字类型">#</a> 数字类型</h5>
+<pre><code>TypeScript里的所有数字都是浮点数。 这些浮点数的类型是 number。 除了支持十进制和十六进制字面量，TypeScript还支持ECMAScript 2015中引入的二进制和八进制字面量。
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let decLiteral: number &#x3D; 6;</span><br><span class="line">let hexLiteral: number &#x3D; 0xf00d;</span><br><span class="line">let binaryLiteral: number &#x3D; 0b1010;</span><br><span class="line">let octalLiteral: number &#x3D; 0o744;</span><br></pre></td></tr></table></figure>
+<h5 id="字符串类型"><a class="markdownIt-Anchor" href="#字符串类型">#</a> 字符串类型</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name: string &#x3D; &quot;bob&quot;;</span><br><span class="line">name &#x3D; &quot;smith&quot;; </span><br></pre></td></tr></table></figure>
+<pre><code>当然TypeScript也支持模版字符串，它可以定义多行文本和内嵌表达式。 这种字符串是被反引号包围（ `），并且以$&#123; expr &#125;这种形式嵌入表达式
+例:
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let name: string &#x3D; &#96;Gene&#96;;</span><br><span class="line">let age: number &#x3D; 37;</span><br><span class="line">let sentence: string &#x3D; &#96;Hello, my name is $&#123; name &#125;.</span><br><span class="line"></span><br><span class="line">I&#39;ll be $&#123; age + 1 &#125; years old next month.&#96;;</span><br></pre></td></tr></table></figure>
+<h5 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h5>
+<pre><code>元素类型后面接上 []，表示由此类型元素组成的一个数组：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let list: number[] &#x3D; [1, 2, 3];</span><br></pre></td></tr></table></figure>
+<pre><code>数组泛型，Array&lt;元素类型&gt;：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let list: Array&lt;number&gt; &#x3D; [1, 2, 3];</span><br></pre></td></tr></table></figure>
+<h5 id="元组-tuple"><a class="markdownIt-Anchor" href="#元组-tuple">#</a> 元组 Tuple</h5>
+<pre><code>元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。 比如，你可以定义一对值分别为 string和number类型的元组。
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Declare a tuple type</span><br><span class="line">let x: [string, number];</span><br><span class="line">&#x2F;&#x2F; Initialize it</span><br><span class="line">x &#x3D; [&#39;hello&#39;, 10]; &#x2F;&#x2F; OK</span><br><span class="line">&#x2F;&#x2F; Initialize it incorrectly</span><br><span class="line">x &#x3D; [10, &#39;hello&#39;]; &#x2F;&#x2F; Error</span><br><span class="line">console.log(x[0].substr(1)); &#x2F;&#x2F; OK  截取字符串</span><br><span class="line">console.log(x[1].substr(1)); &#x2F;&#x2F; Error, &#39;number&#39; does not have &#39;substr&#39;</span><br></pre></td></tr></table></figure>
+<h5 id="枚举"><a class="markdownIt-Anchor" href="#枚举">#</a> 枚举</h5>
+<pre><code>enum类型是对JavaScript标准数据类型的一个补充，默认情况下，从0开始为元素编号。 你也可以手动的指定成员的数值。 例如，我们将上面的例子改成从 1开始编号，或者，全部都采用手动赋值：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">enum Color &#123;Red &#x3D; 1, Green, Blue &#x3D; 4&#125;</span><br><span class="line">let c: Color &#x3D; Color.Green;</span><br></pre></td></tr></table></figure>
+<h5 id="any"><a class="markdownIt-Anchor" href="#any">#</a> Any</h5>
+<pre><code>为那些在编程阶段还不清楚类型的变量指定一个类型，在对现有代码进行改写的时候，any类型是十分有用的，它允许你在编译时可选择地包含或移除类型检查，当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list: any[] &#x3D; [1, true, &quot;free&quot;];</span><br><span class="line">list[1] &#x3D; 100;</span><br></pre></td></tr></table></figure>
+<h5 id="void"><a class="markdownIt-Anchor" href="#void">#</a> Void</h5>
+<pre><code>void类型像是与any类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是 void，声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function warnUser(): void &#123;</span><br><span class="line">    console.log(&quot;This is my warning message&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">let unusable: void &#x3D; undefined;</span><br></pre></td></tr></table></figure>
+<h6 id="类型断言"><a class="markdownIt-Anchor" href="#类型断言">#</a> 类型断言</h6>
+<pre><code>当你清楚地知道一个实体具有比它现有类型更确切的类型。你清楚地知道一个实体具有比它现有类型更确切的类型。类型断言有两种形式。 其一是“尖括号”语法：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any &#x3D; &quot;this is a string&quot;;</span><br><span class="line"></span><br><span class="line">let strLength: number &#x3D; (&lt;string&gt;someValue).length; </span><br></pre></td></tr></table></figure>
+<pre><code>as语法：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any &#x3D; &quot;this is a string&quot;;</span><br><span class="line"></span><br><span class="line">let strLength: number &#x3D; (someValue as string).length;</span><br></pre></td></tr></table></figure>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-03-23 14:01:55" itemprop="dateModified" datetime="2021-03-23T14:01:55+08:00">2021-03-23</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="(￢_￢)智商三岁 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="(￢_￢)智商三岁 Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="(￢_￢)智商三岁 PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>(￢_￢)智商三岁 <i class="ic i-at"><em>@</em></i>(￢_￢)智商三岁
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2019/12/29/TypeScript-%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript-基础总结">http://example.com/2019/12/29/TypeScript-基础总结/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2019/12/26/react-hooks/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="react-hooks">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>react-hooks</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#ts%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.</span> <span class="toc-text"> TS 的优势？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ts%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> TS 的缺点？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ts%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.</span> <span class="toc-text"> TS 中的接口？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFts"><span class="toc-number">4.</span> <span class="toc-text"> 什么是 TS？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text"> 泛型？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text"> 基础类型的运用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">6.1.</span> <span class="toc-text"> 布尔类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">6.2.</span> <span class="toc-text"> 数字类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">6.3.</span> <span class="toc-text"> 字符串类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">6.4.</span> <span class="toc-text"> 数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%83%E7%BB%84-tuple"><span class="toc-number">6.5.</span> <span class="toc-text"> 元组 Tuple</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">6.6.</span> <span class="toc-text"> 枚举</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#any"><span class="toc-number">6.7.</span> <span class="toc-text"> Any</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#void"><span class="toc-number">6.8.</span> <span class="toc-text"> Void</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="toc-number">6.8.1.</span> <span class="toc-text"> 类型断言</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="(￢_￢)智商三岁"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">(￢_￢)智商三岁</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">37</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>艳照</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/03/16/%E5%AF%B9%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%99%E4%B8%AA%E8%81%8C%E4%BD%8D%E4%BD%A0%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%90%86%E8%A7%A3%E7%9A%84%EF%BC%9F/" title="对前端工程师这个职位你是怎么样理解的？">对前端工程师这个职位你是怎么样理解的？</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2019/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="观察者模式">观察者模式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/02/22/vue%E9%9D%A2%E8%AF%95%E9%A2%98/" title="vue面试题">vue面试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2019/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">函数的length属性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/10/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="react生命周期">react生命周期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E5%9F%BA%E7%A1%80%E7%B1%BB%E6%B1%87%E6%80%BB/" title="前端面试题基础类汇总">前端面试题基础类汇总</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/12/28/class/" title="class">class</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2017/01/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" title="这些你都知道吗？">这些你都知道吗？</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" title="手写笔试题">手写笔试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/12/30/JS%E7%9A%84%E4%B8%A5%E6%A0%BC%E4%B8%8E%E9%9D%9E%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94/" title="JS的严格与非严格模式的对比">JS的严格与非严格模式的对比</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">(￢_￢)智商三岁 @ 迎接审判吧！</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2019/12/29/TypeScript-基础总结/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

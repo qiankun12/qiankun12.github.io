@@ -1,0 +1,564 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="(￢_￢)智商三岁" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="(￢_￢)智商三岁" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="(￢_￢)智商三岁" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2018/01/29/vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+
+
+  <title>
+vue-生命周期面试题 |
+迎接审判吧！ = (￢_￢)智商三岁</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">vue-生命周期面试题
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2018-01-29 20:47:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2018-01-29T20:47:36+08:00">2018-01-29</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">迎接审判吧！</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2018/01/29/vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="(￢_￢)智商三岁">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="生命周期函数面试题"><a class="markdownIt-Anchor" href="#生命周期函数面试题">#</a> 生命周期函数面试题</h4>
+<h5 id="什么是vue生命周期"><a class="markdownIt-Anchor" href="#什么是vue生命周期">#</a> 什么是 vue 生命周期？</h5>
+<pre><code>Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载DOM-渲染、更新-渲染、卸载等一系列的过程，我们称这是 Vue 的生命周期。
+</code></pre>
+<h5 id="vue生命周期的作用是什么"><a class="markdownIt-Anchor" href="#vue生命周期的作用是什么">#</a> vue 生命周期的作用是什么</h5>
+<pre><code>Vue 所有的功能的实现都是围绕其生命周期进行的，在生命周期的不同阶段调用对应的钩子函数可以实现组件数据管理和DOM渲染两大重要功能。
+生命周期中有多个事件钩子，在控制整个vue实例的过程时更容易形成好的逻辑。
+</code></pre>
+<h5 id="第一次页面加载会触发哪几个钩子"><a class="markdownIt-Anchor" href="#第一次页面加载会触发哪几个钩子">#</a> 第一次页面加载会触发哪几个钩子？</h5>
+<pre><code>beforeCreate ， created ， beforeMount ，mounted 这几个钩子
+</code></pre>
+<h5 id="简述每个周期具体适合哪些场景"><a class="markdownIt-Anchor" href="#简述每个周期具体适合哪些场景">#</a> 简述每个周期具体适合哪些场景？</h5>
+<h6 id="beforecreate创建前"><a class="markdownIt-Anchor" href="#beforecreate创建前">#</a> beforeCreate：创建前</h6>
+<pre><code>此阶段为实例初始化之后，this指向创建的实例，此时的数据观察事件机制都未形成，不能获得DOM节点。
+data，computed，watch，methods 上的方法和数据均不能访问。
+可以在这加个loading事件。
+</code></pre>
+<h6 id="created创建后"><a class="markdownIt-Anchor" href="#created创建后">#</a> created：创建后</h6>
+<pre><code>此阶段为实例已经创建，完成数据（data、props、computed）的初始化导入依赖项。
+可访问 data computed watch methods 上的方法和数据。
+初始化完成时的事件写在这里，异步请求也适宜在这里调用（请求不宜过多，避免白屏时间太长）。
+可以在这里结束loading事件，还做一些初始化，实现函数自执行。
+未挂载DOM，若在此阶段进行DOM操作一定要放在Vue.nextTick()的回调函数中。
+</code></pre>
+<h6 id="beforemount挂载前"><a class="markdownIt-Anchor" href="#beforemount挂载前">#</a> beforeMount：挂载前</h6>
+<pre><code>虽然得不到具体的DOM元素，但vue挂载的根节点已经创建，下面vue对DOM的操作将围绕这个根元素继续进行。
+beforeMount这个阶段是过渡性的，一般一个项目只能用到一两次。
+</code></pre>
+<h6 id="mounted挂载后"><a class="markdownIt-Anchor" href="#mounted挂载后">#</a> mounted：挂载后</h6>
+<pre><code>完成创建vm.$el，和双向绑定
+完成挂载DOM和渲染，可在mounted钩子函数中对挂载的DOM进行操作。
+可在这发起后端请求，拿回数据，配合路由钩子做一些事情。
+</code></pre>
+<h6 id="beforeupdate数据更新前数据驱动dom"><a class="markdownIt-Anchor" href="#beforeupdate数据更新前数据驱动dom">#</a> beforeUpdate：数据更新前，数据驱动 DOM。</h6>
+<pre><code>在数据更新后虽然没有立即更新数据，但是DOM中的数据会改变，这是vue双向数据绑定的作用。
+可在更新前访问现有的DOM，如手动移出添加的事件监听器。
+</code></pre>
+<h6 id="updated数据更新后完成虚拟dom的重新渲染和打补丁"><a class="markdownIt-Anchor" href="#updated数据更新后完成虚拟dom的重新渲染和打补丁">#</a> updated：数据更新后，完成虚拟 DOM 的重新渲染和打补丁。</h6>
+<pre><code>组件DOM已完成更新，可执行依赖的DOM操作。
+注意：不要在此函数中操作数据（修改属性），会陷入死循环。
+</code></pre>
+<h6 id="beforedestroy销毁前"><a class="markdownIt-Anchor" href="#beforedestroy销毁前">#</a> beforeDestroy：销毁前</h6>
+<pre><code>可做一些删除提示，如：您确定删除xx吗？
+</code></pre>
+<h6 id="destroyed销毁后"><a class="markdownIt-Anchor" href="#destroyed销毁后">#</a> destroyed：销毁后</h6>
+<pre><code>当前组件已被删除，销毁监听事件，组件、事件、子实例也被销毁。
+这时组件已经没有了，无法操作里面的任何东西了。
+</code></pre>
+<h5 id="keep-alive-缓存组件后的生命周期"><a class="markdownIt-Anchor" href="#keep-alive-缓存组件后的生命周期">#</a> keep-alive 缓存组件后的生命周期</h5>
+<h6 id="activated被激活"><a class="markdownIt-Anchor" href="#activated被激活">#</a> activated：被激活</h6>
+<pre><code>在使用vue-router时有时需要使用&lt;keep-alive&gt;&lt;/keep-alive&gt;来缓存组件状态，这个时候created钩子就不会被重复调用了。
+
+如果我们的子组件需要在每次加载的时候进行某些操作，可以使用activated钩子触发。
+</code></pre>
+<h6 id="deactivated被卸载"><a class="markdownIt-Anchor" href="#deactivated被卸载">#</a> deactivated：被卸载</h6>
+<pre><code>&lt;keep-alive&gt;&lt;/keep-alive&gt;组件被移除时使用。
+</code></pre>
+<h6 id="父子组件的生命周期"><a class="markdownIt-Anchor" href="#父子组件的生命周期">#</a> 父子组件的生命周期</h6>
+<pre><code>执行顺序：
+
+父组件开始执行到beforeMount 然后开始子组件执行，最后是父组件mounted。
+如果有兄弟组件，父组件开始执行到beforeMount，然后兄弟组件依次执行到beforeMount，然后按照顺序执行mounted，最后执行父组件的mounted。
+
+当子组件挂载完成后，父组件才会挂载。
+当子组件完成挂在后，父组件会主动执行一次beforeUpdated/updated钩子函数（仅首次）
+父子组件在data变化中是分别监控的，但是更新props中的数据是关联的。
+销毁父组件时，先将子组件销毁后才会销毁父组件。
+兄弟组件的初始化（mounted之前）是分开进行，挂载是从上到下依次进行
+当没有数据关联时，兄弟组件之间的更新和销毁是互不关联的</code></pre>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-03-23 14:02:21" itemprop="dateModified" datetime="2021-03-23T14:02:21+08:00">2021-03-23</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="(￢_￢)智商三岁 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="(￢_￢)智商三岁 Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="(￢_￢)智商三岁 PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>(￢_￢)智商三岁 <i class="ic i-at"><em>@</em></i>(￢_￢)智商三岁
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2018/01/29/vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%9D%A2%E8%AF%95%E9%A2%98/" title="vue-生命周期面试题">http://example.com/2018/01/29/vue-生命周期面试题/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2018/01/29/vue-%E6%8F%92%E6%A7%BD/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetfk5zwj20zk0m8e81.jpg" title="vue-插槽">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>vue-插槽</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2018/02/18/ES5%E4%B8%8EES6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm07ih54j20zk0m84qp.jpg" title="ES5与ES6、H5、C3">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>ES5与ES6、H5、C3</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 生命周期函数面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFvue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.1.</span> <span class="toc-text"> 什么是 vue 生命周期？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.</span> <span class="toc-text"> vue 生命周期的作用是什么</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%BC%9A%E8%A7%A6%E5%8F%91%E5%93%AA%E5%87%A0%E4%B8%AA%E9%92%A9%E5%AD%90"><span class="toc-number">1.3.</span> <span class="toc-text"> 第一次页面加载会触发哪几个钩子？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E6%AF%8F%E4%B8%AA%E5%91%A8%E6%9C%9F%E5%85%B7%E4%BD%93%E9%80%82%E5%90%88%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF"><span class="toc-number">1.4.</span> <span class="toc-text"> 简述每个周期具体适合哪些场景？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#beforecreate%E5%88%9B%E5%BB%BA%E5%89%8D"><span class="toc-number">1.4.1.</span> <span class="toc-text"> beforeCreate：创建前</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#created%E5%88%9B%E5%BB%BA%E5%90%8E"><span class="toc-number">1.4.2.</span> <span class="toc-text"> created：创建后</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#beforemount%E6%8C%82%E8%BD%BD%E5%89%8D"><span class="toc-number">1.4.3.</span> <span class="toc-text"> beforeMount：挂载前</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#mounted%E6%8C%82%E8%BD%BD%E5%90%8E"><span class="toc-number">1.4.4.</span> <span class="toc-text"> mounted：挂载后</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#beforeupdate%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E5%89%8D%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8dom"><span class="toc-number">1.4.5.</span> <span class="toc-text"> beforeUpdate：数据更新前，数据驱动 DOM。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#updated%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E5%90%8E%E5%AE%8C%E6%88%90%E8%99%9A%E6%8B%9Fdom%E7%9A%84%E9%87%8D%E6%96%B0%E6%B8%B2%E6%9F%93%E5%92%8C%E6%89%93%E8%A1%A5%E4%B8%81"><span class="toc-number">1.4.6.</span> <span class="toc-text"> updated：数据更新后，完成虚拟 DOM 的重新渲染和打补丁。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#beforedestroy%E9%94%80%E6%AF%81%E5%89%8D"><span class="toc-number">1.4.7.</span> <span class="toc-text"> beforeDestroy：销毁前</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#destroyed%E9%94%80%E6%AF%81%E5%90%8E"><span class="toc-number">1.4.8.</span> <span class="toc-text"> destroyed：销毁后</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#keep-alive-%E7%BC%93%E5%AD%98%E7%BB%84%E4%BB%B6%E5%90%8E%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.5.</span> <span class="toc-text"> keep-alive 缓存组件后的生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#activated%E8%A2%AB%E6%BF%80%E6%B4%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text"> activated：被激活</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#deactivated%E8%A2%AB%E5%8D%B8%E8%BD%BD"><span class="toc-number">1.5.2.</span> <span class="toc-text"> deactivated：被卸载</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 父子组件的生命周期</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="(￢_￢)智商三岁"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">(￢_￢)智商三岁</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">37</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>艳照</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2018/01/29/vue-%E6%8F%92%E6%A7%BD/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2018/02/18/ES5%E4%B8%8EES6/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2019/01/04/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2017/03/17/%E8%99%9A%E6%8B%9FDOM/" title="虚拟DOM">虚拟DOM</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E5%9F%BA%E7%A1%80%E7%B1%BB%E6%B1%87%E6%80%BB/" title="前端面试题基础类汇总">前端面试题基础类汇总</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" title="css常用选择器">css常用选择器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/01/28/%E8%B7%AF%E7%94%B1%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F/" title="路由的两种模式">路由的两种模式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7/" title="react生命周期旧">react生命周期旧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/01/29/vue-%E6%8F%92%E6%A7%BD/" title="vue-插槽">vue-插槽</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/12/30/class%E7%BB%A7%E6%89%BF/" title="class继承">class继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/12/30/JS%E7%9A%84%E4%B8%A5%E6%A0%BC%E4%B8%8E%E9%9D%9E%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94/" title="JS的严格与非严格模式的对比">JS的严格与非严格模式的对比</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2019/03/04/webpack%E9%9D%A2%E8%AF%95%E9%A2%98/" title="webpack面试题">webpack面试题</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">(￢_￢)智商三岁 @ 迎接审判吧！</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2018/01/29/vue-生命周期面试题/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
