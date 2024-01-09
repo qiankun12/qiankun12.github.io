@@ -100,12 +100,12 @@ vue面试题 |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -348,8 +348,9 @@ Proxy只会代理对象的第一层，那么Vue3又是怎样处理这个问题�
 答：我们可以判断key是否为当前被代理对象target自身属性，也可以判断旧值与新值是否相等，只有满足以上两个条件之一时，才有可能执行trigger。
 </code></pre>
 <h4 id="三十八nexttick知道吗实现原理是什么"><a class="markdownIt-Anchor" href="#三十八nexttick知道吗实现原理是什么">#</a> 三十八.nextTick 知道吗，实现原理是什么？</h4>
-<pre><code>在下次 DOM 更新循环结束之后执行延迟回调。nextTick主要使用了宏任务和微任务。根据执行环境分别尝试采用
-PromiseMutationObserversetImmediate如果以上都不行则采用setTimeout
+<pre><code>在下次 DOM 更新循环结束之后执行延迟回调,在修改数据之后立即使用这个方法获取更新后的DOM。 
+nextTick主要使用了宏任务和微任务。根据执行环境分别尝试采用
+Promise MutationObserver setImmediate如果以上都不行则采用setTimeout
 定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。
 </code></pre>
 <h4 id="三十九说一下vue的生命周期"><a class="markdownIt-Anchor" href="#三十九说一下vue的生命周期">#</a> 三十九。说一下 Vue 的生命周期</h4>
@@ -482,7 +483,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-03-23 14:02:39" itemprop="dateModified" datetime="2021-03-23T14:02:39+08:00">2021-03-23</time>
+    <time title="Modified: 2021-05-21 17:11:59" itemprop="dateModified" datetime="2021-05-21T17:11:59+08:00">2021-05-21</time>
   </span>
 </div>
 
@@ -537,7 +538,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
     <div class="item left">
       
 
-  <a href="/2018/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="JS面试题">
+  <a href="/2018/02/22/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="JS面试题">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>JS面试题</h3>
@@ -547,7 +548,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
     <div class="item right">
       
 
-  <a href="/2018/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="手写笔试题">
+  <a href="/2018/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciryrr3rj20zk0m8nhk.jpg" title="手写笔试题">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>手写笔试题</h3>
@@ -596,7 +597,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
       <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
       <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
       <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
-      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9pbWFnZS5iYWlkdS5jb20vc2VhcmNoL2luZGV4P2N0PTIwMTMyNjU5MiZ6PSZ0bj1iYWlkdWltYWdlJmlwbj1yJndvcmQ9JUU1JTlCJUJFJUU3JTg5JTg3JTIwJUU1JUEzJTgxJUU3JUJBJUI4JUU4JTgzJThDJUU2JTk5JUFGJUU1JTlCJUJFJnBuPSZzcG49JmlzdHlwZT0yJmllPXV0Zi04Jm9lPXV0Zi04JmNsPTImbG09LTEmc3Q9LTEmZnI9YWxhJmZtcT0xMzg5ODYxMjAzODk5X1ImaWM9MCZzZT0mc21lPSZ3aWR0aD0maGVpZ2h0PSZmYWNlPTAmY3M9Jm9zPSZvYmp1cmw9JmRpPSZjZz13YWxscGFwZXImZ3NtPTVhJmR5VGFiU3RyPU1Dd3pMREVzTWl3MkxEUXNOU3c0TERjc09RJTNEJTNE" title="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;index?ct&#x3D;201326592&amp;z&#x3D;&amp;tn&#x3D;baiduimage&amp;ipn&#x3D;r&amp;word&#x3D;%E5%9B%BE%E7%89%87%20%E5%A3%81%E7%BA%B8%E8%83%8C%E6%99%AF%E5%9B%BE&amp;pn&#x3D;&amp;spn&#x3D;&amp;istype&#x3D;2&amp;ie&#x3D;utf-8&amp;oe&#x3D;utf-8&amp;cl&#x3D;2&amp;lm&#x3D;-1&amp;st&#x3D;-1&amp;fr&#x3D;ala&amp;fmq&#x3D;1389861203899_R&amp;ic&#x3D;0&amp;se&#x3D;&amp;sme&#x3D;&amp;width&#x3D;&amp;height&#x3D;&amp;face&#x3D;0&amp;cs&#x3D;&amp;os&#x3D;&amp;objurl&#x3D;&amp;di&#x3D;&amp;cg&#x3D;wallpaper&amp;gsm&#x3D;5a&amp;dyTabStr&#x3D;MCwzLDEsMiw2LDQsNSw4LDcsOQ%3D%3D"><i class="ic i-address-card"></i></span>
 </div>
 
 <ul class="menu">
@@ -670,7 +671,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2018/01/13/TCP%E5%92%8CUDP%E4%BB%A5%E5%8F%8A%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" title="TCP和UDP以及三次握手">TCP和UDP以及三次握手</a></span>
+    <span><a href="/2019/02/23/react%E9%9D%A2%E8%AF%95%E9%A2%98/" title="react面试题">react面试题</a></span>
   </li>
 
       
@@ -679,7 +680,25 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2018/03/10/9%E7%A7%8D%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="9种跨域解决方案">9种跨域解决方案</a></span>
+    <span><a href="/2019/01/05/%E5%87%BD%E6%95%B0%E7%9A%84length%E5%B1%9E%E6%80%A7/" title="函数的length属性">函数的length属性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2019/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="观察者模式">观察者模式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/01/28/%E8%B7%AF%E7%94%B1%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F/" title="路由的两种模式">路由的两种模式</a></span>
   </li>
 
       
@@ -697,7 +716,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2017/01/06/%E8%BF%99%E4%BA%9B%E4%BD%A0%E9%83%BD%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/" title="这些你都知道吗？">这些你都知道吗？</a></span>
+    <span><a href="/2019/03/04/webpack%E9%9D%A2%E8%AF%95%E9%A2%98/" title="webpack面试题">webpack面试题</a></span>
   </li>
 
       
@@ -706,7 +725,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2019/01/25/%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93proxy/" title="简单总结proxy">简单总结proxy</a></span>
+    <span><a href="/2019/12/26/react-hooks/" title="react-hooks">react-hooks</a></span>
   </li>
 
       
@@ -715,7 +734,16 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2018/01/29/vue-%E6%8F%92%E6%A7%BD/" title="vue-插槽">vue-插槽</a></span>
+    <span><a href="/2018/02/22/%E6%89%8B%E5%86%99%E7%AC%94%E8%AF%95%E9%A2%98/" title="手写笔试题">手写笔试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2018/01/13/TCP%E5%92%8CUDP%E4%BB%A5%E5%8F%8A%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" title="TCP和UDP以及三次握手">TCP和UDP以及三次握手</a></span>
   </li>
 
       
@@ -725,33 +753,6 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
 </div>
 
     <span><a href="/2018/09/19/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7/" title="react生命周期旧">react生命周期旧</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2018/03/06/MVC%E3%80%81MVP%E3%80%81MVVM/" title="MVC、MVP、MVVM">MVC、MVP、MVVM</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2018/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8/" title="css常用选择器">css常用选择器</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2017/08/25/%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E5%8E%BB%E9%87%8D%E3%80%81%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84%C2%B7%C2%B7%C2%B7/" title="数组的冒泡排序、去重、随机生成不重复数组···">数组的冒泡排序、去重、随机生成不重复数组···</a></span>
   </li>
 
   </ul>
@@ -766,7 +767,7 @@ vue的数据双向绑定 将mvvm作为数据绑定的入口，整合Observer,com
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
